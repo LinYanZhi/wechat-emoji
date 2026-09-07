@@ -1,0 +1,1001 @@
+﻿[
+    {
+        "order":  1,
+        "file":  "001_微笑.png",
+        "name":  "/微笑",
+        "meaning":  "微笑，礼貌、友好",
+        "type":  "wx-classic",
+        "unicode":  "🙂",
+        "source":  "web"
+    },
+    {
+        "order":  2,
+        "file":  "002_撇嘴.png",
+        "name":  "/撇嘴",
+        "meaning":  "撇嘴，不满、委屈",
+        "type":  "wx-classic",
+        "unicode":  "😟",
+        "source":  "web"
+    },
+    {
+        "order":  3,
+        "file":  "003_色.png",
+        "name":  "/色",
+        "meaning":  "花痴，喜欢、爱慕",
+        "type":  "wx-classic",
+        "unicode":  "😍",
+        "source":  "web"
+    },
+    {
+        "order":  4,
+        "file":  "004_发呆.png",
+        "name":  "/发呆",
+        "meaning":  "发呆，懵、走神",
+        "type":  "wx-classic",
+        "unicode":  "😦",
+        "source":  "web"
+    },
+    {
+        "order":  5,
+        "file":  "005_得意.png",
+        "name":  "/得意",
+        "meaning":  "得意，酷、自信",
+        "type":  "wx-classic",
+        "unicode":  "😎",
+        "source":  "web"
+    },
+    {
+        "order":  6,
+        "file":  "006_流泪.png",
+        "name":  "/流泪",
+        "meaning":  "流泪，大哭、悲伤",
+        "type":  "wx-classic",
+        "unicode":  "😭",
+        "source":  "web"
+    },
+    {
+        "order":  7,
+        "file":  "007_害羞.png",
+        "name":  "/害羞",
+        "meaning":  "害羞微笑，友好、腼腆",
+        "type":  "wx-classic",
+        "unicode":  "😊",
+        "source":  "web"
+    },
+    {
+        "order":  8,
+        "file":  "008_闭嘴.png",
+        "name":  "/闭嘴",
+        "meaning":  "闭嘴，保密、安静",
+        "type":  "wx-classic",
+        "unicode":  "🤐",
+        "source":  "web"
+    },
+    {
+        "order":  9,
+        "file":  "009_睡.png",
+        "name":  "/睡",
+        "meaning":  "睡觉，困了",
+        "type":  "wx-classic",
+        "unicode":  "😪",
+        "source":  "web"
+    },
+    {
+        "order":  10,
+        "file":  "010_大哭.png",
+        "name":  "/大哭",
+        "meaning":  "大哭，伤心",
+        "type":  "wx-classic",
+        "unicode":  "😢",
+        "source":  "web"
+    },
+    {
+        "order":  11,
+        "file":  "011_尴尬.png",
+        "name":  "/尴尬",
+        "meaning":  "尴尬，场面尴尬",
+        "type":  "wx-classic",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  12,
+        "file":  "012_发怒.png",
+        "name":  "/发怒",
+        "meaning":  "发怒，愤怒、火大",
+        "type":  "wx-classic",
+        "unicode":  "😡",
+        "source":  "web"
+    },
+    {
+        "order":  13,
+        "file":  "013_调皮.png",
+        "name":  "/调皮",
+        "meaning":  "调皮，吐舌玩闹",
+        "type":  "wx-classic",
+        "unicode":  "😛",
+        "source":  "web"
+    },
+    {
+        "order":  14,
+        "file":  "014_呲牙.png",
+        "name":  "/呲牙",
+        "meaning":  "呲牙，咧嘴笑、高兴",
+        "type":  "wx-classic",
+        "unicode":  "😁",
+        "source":  "web"
+    },
+    {
+        "order":  15,
+        "file":  "015_惊讶.png",
+        "name":  "/惊讶",
+        "meaning":  "惊讶，震惊",
+        "type":  "wx-classic",
+        "unicode":  "😲",
+        "source":  "web"
+    },
+    {
+        "order":  16,
+        "file":  "016_难过.png",
+        "name":  "/难过",
+        "meaning":  "难过，不开心",
+        "type":  "wx-classic",
+        "unicode":  "🙁",
+        "source":  "web"
+    },
+    {
+        "order":  17,
+        "file":  "017_囧.png",
+        "name":  "/囧",
+        "meaning":  "囧，尴尬、无奈（微信经典表情）",
+        "type":  "wx-classic",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  18,
+        "file":  "018_抓狂.png",
+        "name":  "/抓狂",
+        "meaning":  "抓狂，崩溃",
+        "type":  "wx-classic",
+        "unicode":  "😫",
+        "source":  "web"
+    },
+    {
+        "order":  19,
+        "file":  "019_吐.png",
+        "name":  "/吐",
+        "meaning":  "吐，呕吐、恶心",
+        "type":  "wx-classic",
+        "unicode":  "🤮",
+        "source":  "web"
+    },
+    {
+        "order":  20,
+        "file":  "020_偷笑.png",
+        "name":  "/偷笑",
+        "meaning":  "偷笑，捂嘴笑、憋笑",
+        "type":  "wx-classic",
+        "unicode":  "🤭",
+        "source":  "web"
+    },
+    {
+        "order":  21,
+        "file":  "021_愉快.png",
+        "name":  "/愉快",
+        "meaning":  "愉快，开心、心情好",
+        "type":  "wx-classic",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  22,
+        "file":  "022_白眼.png",
+        "name":  "/白眼",
+        "meaning":  "白眼（新版），无语、嫌弃",
+        "type":  "wx-classic",
+        "unicode":  "🙄",
+        "source":  "web"
+    },
+    {
+        "order":  23,
+        "file":  "023_傲慢.png",
+        "name":  "/傲慢",
+        "meaning":  "困惑，不太高兴、别扭",
+        "type":  "wx-classic",
+        "unicode":  "😕",
+        "source":  "web"
+    },
+    {
+        "order":  24,
+        "file":  "024_困.png",
+        "name":  "/困",
+        "meaning":  "困（新版），犯困",
+        "type":  "wx-classic",
+        "unicode":  "😪",
+        "source":  "web"
+    },
+    {
+        "order":  25,
+        "file":  "025_惊恐.png",
+        "name":  "/惊恐",
+        "meaning":  "惊恐，害怕",
+        "type":  "wx-classic",
+        "unicode":  "😨",
+        "source":  "web"
+    },
+    {
+        "order":  26,
+        "file":  "026_憨笑.png",
+        "name":  "/憨笑",
+        "meaning":  "憨笑，开心大笑",
+        "type":  "wx-classic",
+        "unicode":  "😀",
+        "source":  "web"
+    },
+    {
+        "order":  27,
+        "file":  "027_悠闲.png",
+        "name":  "/悠闲",
+        "meaning":  "悠闲，抽烟、惬意",
+        "type":  "wx-classic",
+        "unicode":  "🚬",
+        "source":  "web"
+    },
+    {
+        "order":  28,
+        "file":  "028_咒骂.png",
+        "name":  "/咒骂",
+        "meaning":  "咒骂，骂人、爆粗",
+        "type":  "wx-classic",
+        "unicode":  "🤬",
+        "source":  "web"
+    },
+    {
+        "order":  29,
+        "file":  "029_疑问.png",
+        "name":  "/疑问",
+        "meaning":  "疑问，疑惑、问号脸",
+        "type":  "wx-classic",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  30,
+        "file":  "030_嘘.png",
+        "name":  "/嘘",
+        "meaning":  "嘘，安静、保密",
+        "type":  "wx-classic",
+        "unicode":  "🤫",
+        "source":  "web"
+    },
+    {
+        "order":  31,
+        "file":  "031_晕.png",
+        "name":  "/晕",
+        "meaning":  "晕，头晕、晕倒",
+        "type":  "wx-classic",
+        "unicode":  "😵",
+        "source":  "web"
+    },
+    {
+        "order":  32,
+        "file":  "032_衰.png",
+        "name":  "/衰",
+        "meaning":  "衰，倒霉、想哭",
+        "type":  "wx-classic",
+        "unicode":  "😢",
+        "source":  "web"
+    },
+    {
+        "order":  33,
+        "file":  "033_骷髅.png",
+        "name":  "/骷髅",
+        "meaning":  "骷髅，笑死、无语、吓人",
+        "type":  "wx-classic",
+        "unicode":  "💀",
+        "source":  "web"
+    },
+    {
+        "order":  34,
+        "file":  "034_敲打.png",
+        "name":  "/敲打",
+        "meaning":  "敲打，受伤、挨打",
+        "type":  "wx-classic",
+        "unicode":  "🤕",
+        "source":  "web"
+    },
+    {
+        "order":  35,
+        "file":  "035_再见.png",
+        "name":  "/再见",
+        "meaning":  "挥手再见、告别",
+        "type":  "wx-classic",
+        "unicode":  "👋",
+        "source":  "web"
+    },
+    {
+        "order":  36,
+        "file":  "036_擦汗.png",
+        "name":  "/擦汗",
+        "meaning":  "擦汗，尴尬、紧张",
+        "type":  "wx-classic",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  37,
+        "file":  "037_抠鼻.png",
+        "name":  "/抠鼻",
+        "meaning":  "抠鼻，不屑、无语",
+        "type":  "wx-classic",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  38,
+        "file":  "038_鼓掌.png",
+        "name":  "/鼓掌",
+        "meaning":  "鼓掌，欢迎、喝彩",
+        "type":  "wx-classic",
+        "unicode":  "👏",
+        "source":  "web"
+    },
+    {
+        "order":  39,
+        "file":  "039_坏笑.png",
+        "name":  "/坏笑",
+        "meaning":  "坏笑，龇牙、尴尬",
+        "type":  "wx-classic",
+        "unicode":  "😬",
+        "source":  "web"
+    },
+    {
+        "order":  40,
+        "file":  "040_右哼哼.png",
+        "name":  "/右哼哼",
+        "meaning":  "右哼哼，不服气",
+        "type":  "wx-classic",
+        "unicode":  "😤",
+        "source":  "web"
+    },
+    {
+        "order":  41,
+        "file":  "041_鄙视.png",
+        "name":  "/鄙视",
+        "meaning":  "鄙视，看不起、嫌弃",
+        "type":  "wx-classic",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  42,
+        "file":  "042_委屈.png",
+        "name":  "/委屈",
+        "meaning":  "委屈（新版），难过",
+        "type":  "wx-classic",
+        "unicode":  "🙁",
+        "source":  "web"
+    },
+    {
+        "order":  43,
+        "file":  "043_快哭了.png",
+        "name":  "/快哭了",
+        "meaning":  "快哭了，委屈、难过",
+        "type":  "wx-classic",
+        "unicode":  "😥",
+        "source":  "web"
+    },
+    {
+        "order":  44,
+        "file":  "044_阴险.png",
+        "name":  "/阴险",
+        "meaning":  "阴险，坏笑、算计",
+        "type":  "wx-classic",
+        "unicode":  "😏",
+        "source":  "web"
+    },
+    {
+        "order":  45,
+        "file":  "045_亲亲.png",
+        "name":  "/亲亲",
+        "meaning":  "亲亲",
+        "type":  "wx-classic",
+        "unicode":  "😚",
+        "source":  "web"
+    },
+    {
+        "order":  46,
+        "file":  "046_可怜.png",
+        "name":  "/可怜",
+        "meaning":  "可怜巴巴，求人、委屈",
+        "type":  "wx-classic",
+        "unicode":  "🥺",
+        "source":  "web"
+    },
+    {
+        "order":  47,
+        "file":  "047_笑脸.png",
+        "name":  "/笑脸",
+        "meaning":  "笑脸，开心",
+        "type":  "wx-2021",
+        "unicode":  "😄",
+        "source":  "mp"
+    },
+    {
+        "order":  48,
+        "file":  "048_生病.png",
+        "name":  "/生病",
+        "meaning":  "生病，感冒、不舒服",
+        "type":  "wx-2021",
+        "unicode":  "😷",
+        "source":  "mp"
+    },
+    {
+        "order":  49,
+        "file":  "049_脸红.png",
+        "name":  "/脸红",
+        "meaning":  "脸红，害羞",
+        "type":  "wx-2021",
+        "unicode":  "😳",
+        "source":  "mp"
+    },
+    {
+        "order":  50,
+        "file":  "050_破涕为笑.png",
+        "name":  "/破涕为笑",
+        "meaning":  "破涕为笑，笑哭、笑得流泪",
+        "type":  "wx-2021",
+        "unicode":  "😂",
+        "source":  "mp"
+    },
+    {
+        "order":  51,
+        "file":  "051_恐惧.png",
+        "name":  "/恐惧",
+        "meaning":  "恐惧（新版），害怕",
+        "type":  "wx-2021",
+        "unicode":  "😱",
+        "source":  "mp"
+    },
+    {
+        "order":  52,
+        "file":  "052_失望.png",
+        "name":  "/失望",
+        "meaning":  "失望，低落",
+        "type":  "wx-2021",
+        "unicode":  "😔",
+        "source":  "mp"
+    },
+    {
+        "order":  53,
+        "file":  "053_无语.png",
+        "name":  "/无语",
+        "meaning":  "无语，嫌弃",
+        "type":  "wx-2021",
+        "unicode":  "😒",
+        "source":  "mp"
+    },
+    {
+        "order":  54,
+        "file":  "054_嘿哈.png",
+        "name":  "/嘿哈",
+        "meaning":  "嘿哈，开心打招呼",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  55,
+        "file":  "055_捂脸.png",
+        "name":  "/捂脸",
+        "meaning":  "捂脸，无语、尴尬、哭笑不得",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  56,
+        "file":  "056_奸笑.png",
+        "name":  "/奸笑",
+        "meaning":  "奸笑，阴险得意、坏笑",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  57,
+        "file":  "057_机智.png",
+        "name":  "/机智",
+        "meaning":  "机智，聪明、机灵",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  58,
+        "file":  "058_皱眉.png",
+        "name":  "/皱眉",
+        "meaning":  "皱眉（新版），可怜、难过",
+        "type":  "wx-2021",
+        "unicode":  "🥺",
+        "source":  "mp"
+    },
+    {
+        "order":  59,
+        "file":  "059_耶.png",
+        "name":  "/耶",
+        "meaning":  "耶（新版），胜利、开心",
+        "type":  "wx-2021",
+        "unicode":  "✌",
+        "source":  "mp"
+    },
+    {
+        "order":  60,
+        "file":  "060_吃瓜.png",
+        "name":  "/吃瓜",
+        "meaning":  "吃瓜，围观、看热闹",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  61,
+        "file":  "061_加油.png",
+        "name":  "/加油",
+        "meaning":  "加油，鼓励、打气",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  62,
+        "file":  "062_汗.png",
+        "name":  "/汗",
+        "meaning":  "汗（新版），尴尬、无奈",
+        "type":  "wx-2021",
+        "unicode":  "😓",
+        "source":  "mp"
+    },
+    {
+        "order":  63,
+        "file":  "063_天啊.png",
+        "name":  "/天啊",
+        "meaning":  "天啊，惊讶、惊呼",
+        "type":  "wx-2021",
+        "unicode":  "😲",
+        "source":  "mp"
+    },
+    {
+        "order":  64,
+        "file":  "064_emm.png",
+        "name":  "/emm",
+        "meaning":  "emm，无语、尴尬",
+        "type":  "wx-2021",
+        "unicode":  "😑",
+        "source":  "mp"
+    },
+    {
+        "order":  65,
+        "file":  "065_社会社会.png",
+        "name":  "/社会社会",
+        "meaning":  "社会社会，佩服、厉害（调侃）",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  66,
+        "file":  "066_旺柴.png",
+        "name":  "/旺柴",
+        "meaning":  "旺柴（柴犬头），调侃、滑稽",
+        "type":  "wx-2021",
+        "unicode":  "🐶",
+        "source":  "mp"
+    },
+    {
+        "order":  67,
+        "file":  "067_好的.png",
+        "name":  "/好的",
+        "meaning":  "好的（新版），OK、没问题",
+        "type":  "wx-2021",
+        "unicode":  "👌",
+        "source":  "mp"
+    },
+    {
+        "order":  68,
+        "file":  "068_打脸.png",
+        "name":  "/打脸",
+        "meaning":  "打脸（新版），受伤、尴尬",
+        "type":  "wx-2021",
+        "unicode":  "🤕",
+        "source":  "mp"
+    },
+    {
+        "order":  69,
+        "file":  "069_哇.png",
+        "name":  "/哇",
+        "meaning":  "哇，星星眼、崇拜",
+        "type":  "wx-2021",
+        "unicode":  "🤩",
+        "source":  "mp"
+    },
+    {
+        "order":  70,
+        "file":  "070_翻白眼.png",
+        "name":  "[翻白眼]",
+        "meaning":  "翻白眼，无语、嫌弃",
+        "type":  "wx-2021",
+        "unicode":  "🙄",
+        "source":  "mp"
+    },
+    {
+        "order":  71,
+        "file":  "071_666.png",
+        "name":  "[666]",
+        "meaning":  "666，厉害、牛",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  72,
+        "file":  "072_让我看看.png",
+        "name":  "[让我看看]",
+        "meaning":  "让我看看，好奇、围观",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  73,
+        "file":  "073_叹气.png",
+        "name":  "[叹气]",
+        "meaning":  "叹气，无奈、感慨",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  74,
+        "file":  "074_苦涩.png",
+        "name":  "[苦涩]",
+        "meaning":  "苦涩，心酸、无奈",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  75,
+        "file":  "075_裂开.png",
+        "name":  "[裂开]",
+        "meaning":  "裂开，心态崩了、震惊",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    },
+    {
+        "order":  76,
+        "file":  "076_嘴唇.png",
+        "name":  "/嘴唇",
+        "meaning":  "嘴唇，示爱、飞吻",
+        "type":  "wx-object",
+        "unicode":  "👄",
+        "source":  "web"
+    },
+    {
+        "order":  77,
+        "file":  "077_爱心.png",
+        "name":  "/爱心",
+        "meaning":  "爱心，喜欢、爱",
+        "type":  "wx-object",
+        "unicode":  "❤",
+        "source":  "web"
+    },
+    {
+        "order":  78,
+        "file":  "078_心碎.png",
+        "name":  "/心碎",
+        "meaning":  "心碎，伤心、失恋",
+        "type":  "wx-object",
+        "unicode":  "💔",
+        "source":  "web"
+    },
+    {
+        "order":  79,
+        "file":  "079_拥抱.png",
+        "name":  "/拥抱",
+        "meaning":  "拥抱，欢迎、抱抱",
+        "type":  "wx-classic",
+        "unicode":  "🤗",
+        "source":  "web"
+    },
+    {
+        "order":  80,
+        "file":  "080_强.png",
+        "name":  "/强",
+        "meaning":  "肌肉，强壮、加油",
+        "type":  "wx-object",
+        "unicode":  "💪",
+        "source":  "web"
+    },
+    {
+        "order":  81,
+        "file":  "081_弱.png",
+        "name":  "/弱",
+        "meaning":  "弱，不行、认输（经典表情）",
+        "type":  "wx-object",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  82,
+        "file":  "082_握手.png",
+        "name":  "/握手",
+        "meaning":  "握手，合作、达成一致",
+        "type":  "wx-object",
+        "unicode":  "🤝",
+        "source":  "web"
+    },
+    {
+        "order":  83,
+        "file":  "083_胜利.png",
+        "name":  "/胜利",
+        "meaning":  "胜利，成功、赢",
+        "type":  "wx-object",
+        "unicode":  "✌",
+        "source":  "web"
+    },
+    {
+        "order":  84,
+        "file":  "084_抱拳.png",
+        "name":  "/抱拳",
+        "meaning":  "抱拳，感谢、拜托",
+        "type":  "wx-object",
+        "unicode":  "🙏",
+        "source":  "web"
+    },
+    {
+        "order":  85,
+        "file":  "085_勾引.png",
+        "name":  "/勾引",
+        "meaning":  "勾引，撩人、挑逗",
+        "type":  "wx-object",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  86,
+        "file":  "086_拳头.png",
+        "name":  "/拳头",
+        "meaning":  "拳头，加油、打气",
+        "type":  "wx-object",
+        "unicode":  "✊",
+        "source":  "web"
+    },
+    {
+        "order":  87,
+        "file":  "087_OK.png",
+        "name":  "/OK",
+        "meaning":  "OK，好的、没问题",
+        "type":  "wx-object",
+        "unicode":  "👌",
+        "source":  "web"
+    },
+    {
+        "order":  88,
+        "file":  "088_合十.png",
+        "name":  "/合十",
+        "meaning":  "合十（新版），感谢、祈祷",
+        "type":  "wx-object",
+        "unicode":  "🙏",
+        "source":  "web"
+    },
+    {
+        "order":  89,
+        "file":  "089_啤酒.png",
+        "name":  "/啤酒",
+        "meaning":  "啤酒，干杯、聚会",
+        "type":  "wx-object",
+        "unicode":  "🍺",
+        "source":  "web"
+    },
+    {
+        "order":  90,
+        "file":  "090_咖啡.png",
+        "name":  "/咖啡",
+        "meaning":  "咖啡，提神、喝一杯",
+        "type":  "wx-object",
+        "unicode":  "☕",
+        "source":  "web"
+    },
+    {
+        "order":  91,
+        "file":  "091_蛋糕.png",
+        "name":  "/蛋糕",
+        "meaning":  "蛋糕，生日、庆祝",
+        "type":  "wx-object",
+        "unicode":  "🍰",
+        "source":  "web"
+    },
+    {
+        "order":  92,
+        "file":  "092_玫瑰.png",
+        "name":  "/玫瑰",
+        "meaning":  "玫瑰，爱情、示爱、感谢",
+        "type":  "wx-object",
+        "unicode":  "🌹",
+        "source":  "web"
+    },
+    {
+        "order":  93,
+        "file":  "093_凋谢.png",
+        "name":  "/凋谢",
+        "meaning":  "凋谢，失恋、心灰意冷",
+        "type":  "wx-object",
+        "unicode":  "🥀",
+        "source":  "web"
+    },
+    {
+        "order":  94,
+        "file":  "094_菜刀.png",
+        "name":  "/菜刀",
+        "meaning":  "菜刀，切菜、威胁",
+        "type":  "wx-object",
+        "unicode":  "🔪",
+        "source":  "web"
+    },
+    {
+        "order":  95,
+        "file":  "095_炸弹.png",
+        "name":  "/炸弹",
+        "meaning":  "炸弹，炸了、劲爆",
+        "type":  "wx-object",
+        "unicode":  "💣",
+        "source":  "web"
+    },
+    {
+        "order":  96,
+        "file":  "096_便便.png",
+        "name":  "/便便",
+        "meaning":  "便便，恶心、调侃",
+        "type":  "wx-object",
+        "unicode":  "💩",
+        "source":  "web"
+    },
+    {
+        "order":  97,
+        "file":  "097_月亮.png",
+        "name":  "/月亮",
+        "meaning":  "月亮，夜晚、晚安",
+        "type":  "wx-object",
+        "unicode":  "🌙",
+        "source":  "web"
+    },
+    {
+        "order":  98,
+        "file":  "098_太阳.png",
+        "name":  "/太阳",
+        "meaning":  "太阳，白天、阳光好天气",
+        "type":  "wx-object",
+        "unicode":  "🌞",
+        "source":  "web"
+    },
+    {
+        "order":  99,
+        "file":  "099_庆祝.png",
+        "name":  "/庆祝",
+        "meaning":  "庆祝，祝贺、派对、开派对",
+        "type":  "wx-object",
+        "unicode":  "🎉",
+        "source":  "web"
+    },
+    {
+        "order":  100,
+        "file":  "100_礼物.png",
+        "name":  "/礼物",
+        "meaning":  "礼物，惊喜、赠送",
+        "type":  "wx-object",
+        "unicode":  "🎁",
+        "source":  "web"
+    },
+    {
+        "order":  101,
+        "file":  "101_红包.png",
+        "name":  "/红包",
+        "meaning":  "红包，恭喜发财、收钱",
+        "type":  "wx-object",
+        "unicode":  "🧧",
+        "source":  "web"
+    },
+    {
+        "order":  102,
+        "file":  "102_發.png",
+        "name":  "/發",
+        "meaning":  "麻将「發」牌，招财进宝",
+        "type":  "wx-object",
+        "unicode":  "🀅",
+        "source":  "web"
+    },
+    {
+        "order":  103,
+        "file":  "103_福.png",
+        "name":  "/福",
+        "meaning":  "福，祝福、过年、喜庆",
+        "type":  "wx-object",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  104,
+        "file":  "104_烟花.png",
+        "name":  "/烟花",
+        "meaning":  "烟花，过年、庆祝",
+        "type":  "wx-object",
+        "unicode":  "🎆",
+        "source":  "web"
+    },
+    {
+        "order":  105,
+        "file":  "105_爆竹.png",
+        "name":  "/爆竹",
+        "meaning":  "爆竹，过年、热闹",
+        "type":  "wx-object",
+        "unicode":  "🧨",
+        "source":  "web"
+    },
+    {
+        "order":  106,
+        "file":  "106_猪头.png",
+        "name":  "/猪头",
+        "meaning":  "猪头，贪吃、调侃对方",
+        "type":  "wx-classic",
+        "unicode":  "🐷",
+        "source":  "web"
+    },
+    {
+        "order":  107,
+        "file":  "107_发抖.png",
+        "name":  "/发抖",
+        "meaning":  "发抖，冷、冻僵",
+        "type":  "wx-object",
+        "unicode":  "🥶",
+        "source":  "web"
+    },
+    {
+        "order":  108,
+        "file":  "108_跳跳.png",
+        "name":  "/跳跳",
+        "meaning":  "跳跳，蹦跳、开心",
+        "type":  "wx-object",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  109,
+        "file":  "109_转圈.png",
+        "name":  "/转圈",
+        "meaning":  "转圈，庆祝、晕头转向",
+        "type":  "wx-object",
+        "unicode":  "",
+        "source":  "web"
+    },
+    {
+        "order":  110,
+        "file":  "110_吐舌.png",
+        "name":  "/吐舌",
+        "meaning":  "吐舌，调皮、得意",
+        "type":  "wx-2021",
+        "unicode":  "😝",
+        "source":  "mp"
+    },
+    {
+        "order":  111,
+        "file":  "111_加油加油.png",
+        "name":  "/加油加油",
+        "meaning":  "加油加油，强力鼓劲",
+        "type":  "wx-2021",
+        "unicode":  "",
+        "source":  "mp"
+    }
+]

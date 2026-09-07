@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>仿微信聊天 Demo - 微信原版表情</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#e5e5e5; display:flex; justify-content:center; align-items:center; min-height:100vh; font-family:"PingFang SC","Microsoft YaHei",sans-serif; }
+  .phone { width:390px; height:760px; max-height:96vh; background:#ededed; border-radius:18px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 8px 40px rgba(0,0,0,.25); }
+  .nav { background:#ededed; padding:14px 0 12px; text-align:center; font-size:17px; font-weight:600; color:#111; border-bottom:1px solid #d8d8d8; position:relative; }
+  .chat { flex:1; overflow-y:auto; padding:14px 12px; background:#ededed; }
+  .msg { display:flex; margin-bottom:16px; }
+  .msg.me { flex-direction:row-reverse; }
+  .avatar { width:40px; height:40px; border-radius:6px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; font-size:18px; background:#6ecb63; }
+  .msg.me .avatar { background:#ffb02e; }
+  .bubble { max-width:240px; margin:0 10px; padding:9px 12px; font-size:15px; line-height:1.5; word-break:break-word; background:#fff; border-radius:6px; position:relative; }
+  .msg.me .bubble { background:#95ec69; }
+  .bubble img.em { width:26px; height:26px; vertical-align:-6px; margin:0 1px; }
+  .inputbar { background:#f7f7f7; border-top:1px solid #d8d8d8; padding:8px 10px; display:flex; align-items:center; gap:8px; position:relative; }
+  .inputbar input { flex:1; border:none; outline:none; border-radius:6px; padding:9px 12px; font-size:15px; background:#fff; }
+  .inputbar .btn { background:#07c160; color:#fff; border:none; border-radius:6px; padding:9px 16px; font-size:15px; cursor:pointer; }
+  .picker { display:none; flex-direction:column; position:absolute; left:0; right:0; bottom:100%; background:#f7f7f7; border-top:1px solid #d8d8d8; box-shadow:0 -4px 16px rgba(0,0,0,.12); }
+  .picker.open { display:flex; }
+  .tabs { display:flex; border-bottom:1px solid #e0e0e0; }
+  .tabs button { flex:1; border:none; background:none; padding:9px 0; font-size:14px; color:#666; cursor:pointer; border-bottom:2px solid transparent; }
+  .tabs button.on { color:#07c160; border-bottom-color:#07c160; font-weight:600; }
+  .preview { display:flex; align-items:center; gap:10px; padding:6px 10px; min-height:44px; background:#fff; border-bottom:1px solid #eee; font-size:13px; }
+  .preview .pimg { width:34px; height:34px; flex:none; display:flex; align-items:center; justify-content:center; }
+  .preview .pimg img { width:30px; height:30px; }
+  .preview .pname { color:#111; font-weight:600; }
+  .preview .pmean { color:#888; }
+  .grid { height:170px; overflow-y:auto; display:grid; grid-template-columns:repeat(8,1fr); gap:2px; padding:6px; }
+  .grid img { width:100%; aspect-ratio:1; object-fit:contain; cursor:pointer; border-radius:4px; padding:2px; }
+  .grid img:hover { background:#e3e3e3; }
+  .hint { font-size:12px; color:#999; text-align:center; padding:4px 0; background:#f7f7f7; border-top:1px solid #eee; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="nav"><span class="title">微信(1)</span></div>
+  <div class="chat" id="chat"></div>
+  <div class="inputbar">
+    <div class="picker" id="picker">
+      <div class="tabs">
+        <button class="on" data-tab="face">表情</button>
+        <button data-tab="object">符号</button>
+      </div>
+      <div class="preview" id="preview">
+        <div class="pimg"><img id="pImg" src="" alt=""></div>
+        <div><div class="pname" id="pName"></div><div class="pmean" id="pMean"></div></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+    <input id="input" placeholder="试试输入 /微笑 或 [裂开] 后发送">
+    <button class="btn" id="send">发送</button>
+  </div>
+  <div class="hint">点输入框打开表情面板 · 悬停查看名字和意思 · 点击插入短代码 · 发送时自动替换为表情图片</div>
+</div>
+
+<script>
+// EMBEDDED_MANIFEST
+const MANIFEST = [["001_微笑.png","/微笑","🙂","微笑，礼貌、友好","wx-classic"],["002_撇嘴.png","/撇嘴","😟","撇嘴，不满、委屈","wx-classic"],["003_色.png","/色","😍","花痴，喜欢、爱慕","wx-classic"],["004_发呆.png","/发呆","😦","发呆，懵、走神","wx-classic"],["005_得意.png","/得意","😎","得意，酷、自信","wx-classic"],["006_流泪.png","/流泪","😭","流泪，大哭、悲伤","wx-classic"],["007_害羞.png","/害羞","😊","害羞微笑，友好、腼腆","wx-classic"],["008_闭嘴.png","/闭嘴","🤐","闭嘴，保密、安静","wx-classic"],["009_睡.png","/睡","😪","睡觉，困了","wx-classic"],["010_大哭.png","/大哭","😢","大哭，伤心","wx-classic"],["011_尴尬.png","/尴尬","","尴尬，场面尴尬","wx-classic"],["012_发怒.png","/发怒","😡","发怒，愤怒、火大","wx-classic"],["013_调皮.png","/调皮","😛","调皮，吐舌玩闹","wx-classic"],["014_呲牙.png","/呲牙","😁","呲牙，咧嘴笑、高兴","wx-classic"],["015_惊讶.png","/惊讶","😲","惊讶，震惊","wx-classic"],["016_难过.png","/难过","🙁","难过，不开心","wx-classic"],["017_囧.png","/囧","","囧，尴尬、无奈（微信经典表情）","wx-classic"],["018_抓狂.png","/抓狂","😫","抓狂，崩溃","wx-classic"],["019_吐.png","/吐","🤮","吐，呕吐、恶心","wx-classic"],["020_偷笑.png","/偷笑","🤭","偷笑，捂嘴笑、憋笑","wx-classic"],["021_愉快.png","/愉快","","愉快，开心、心情好","wx-classic"],["022_白眼.png","/白眼","🙄","白眼（新版），无语、嫌弃","wx-classic"],["023_傲慢.png","/傲慢","😕","困惑，不太高兴、别扭","wx-classic"],["024_困.png","/困","😪","困（新版），犯困","wx-classic"],["025_惊恐.png","/惊恐","😨","惊恐，害怕","wx-classic"],["026_憨笑.png","/憨笑","😀","憨笑，开心大笑","wx-classic"],["027_悠闲.png","/悠闲","🚬","悠闲，抽烟、惬意","wx-classic"],["028_咒骂.png","/咒骂","🤬","咒骂，骂人、爆粗","wx-classic"],["029_疑问.png","/疑问","","疑问，疑惑、问号脸","wx-classic"],["030_嘘.png","/嘘","🤫","嘘，安静、保密","wx-classic"],["031_晕.png","/晕","😵","晕，头晕、晕倒","wx-classic"],["032_衰.png","/衰","😢","衰，倒霉、想哭","wx-classic"],["033_骷髅.png","/骷髅","💀","骷髅，笑死、无语、吓人","wx-classic"],["034_敲打.png","/敲打","🤕","敲打，受伤、挨打","wx-classic"],["035_再见.png","/再见","👋","挥手再见、告别","wx-classic"],["036_擦汗.png","/擦汗","","擦汗，尴尬、紧张","wx-classic"],["037_抠鼻.png","/抠鼻","","抠鼻，不屑、无语","wx-classic"],["038_鼓掌.png","/鼓掌","👏","鼓掌，欢迎、喝彩","wx-classic"],["039_坏笑.png","/坏笑","😬","坏笑，龇牙、尴尬","wx-classic"],["040_右哼哼.png","/右哼哼","😤","右哼哼，不服气","wx-classic"],["041_鄙视.png","/鄙视","","鄙视，看不起、嫌弃","wx-classic"],["042_委屈.png","/委屈","🙁","委屈（新版），难过","wx-classic"],["043_快哭了.png","/快哭了","😥","快哭了，委屈、难过","wx-classic"],["044_阴险.png","/阴险","😏","阴险，坏笑、算计","wx-classic"],["045_亲亲.png","/亲亲","😚","亲亲","wx-classic"],["046_可怜.png","/可怜","🥺","可怜巴巴，求人、委屈","wx-classic"],["047_笑脸.png","/笑脸","😄","笑脸，开心","wx-2021"],["048_生病.png","/生病","😷","生病，感冒、不舒服","wx-2021"],["049_脸红.png","/脸红","😳","脸红，害羞","wx-2021"],["050_破涕为笑.png","/破涕为笑","😂","破涕为笑，笑哭、笑得流泪","wx-2021"],["051_恐惧.png","/恐惧","😱","恐惧（新版），害怕","wx-2021"],["052_失望.png","/失望","😔","失望，低落","wx-2021"],["053_无语.png","/无语","😒","无语，嫌弃","wx-2021"],["054_嘿哈.png","/嘿哈","","嘿哈，开心打招呼","wx-2021"],["055_捂脸.png","/捂脸","","捂脸，无语、尴尬、哭笑不得","wx-2021"],["056_奸笑.png","/奸笑","","奸笑，阴险得意、坏笑","wx-2021"],["057_机智.png","/机智","","机智，聪明、机灵","wx-2021"],["058_皱眉.png","/皱眉","🥺","皱眉（新版），可怜、难过","wx-2021"],["059_耶.png","/耶","✌","耶（新版），胜利、开心","wx-2021"],["060_吃瓜.png","/吃瓜","","吃瓜，围观、看热闹","wx-2021"],["061_加油.png","/加油","","加油，鼓励、打气","wx-2021"],["062_汗.png","/汗","😓","汗（新版），尴尬、无奈","wx-2021"],["063_天啊.png","/天啊","😲","天啊，惊讶、惊呼","wx-2021"],["064_emm.png","/emm","😑","emm，无语、尴尬","wx-2021"],["065_社会社会.png","/社会社会","","社会社会，佩服、厉害（调侃）","wx-2021"],["066_旺柴.png","/旺柴","🐶","旺柴（柴犬头），调侃、滑稽","wx-2021"],["067_好的.png","/好的","👌","好的（新版），OK、没问题","wx-2021"],["068_打脸.png","/打脸","🤕","打脸（新版），受伤、尴尬","wx-2021"],["069_哇.png","/哇","🤩","哇，星星眼、崇拜","wx-2021"],["070_翻白眼.png","[翻白眼]","🙄","翻白眼，无语、嫌弃","wx-2021"],["071_666.png","[666]","","666，厉害、牛","wx-2021"],["072_让我看看.png","[让我看看]","","让我看看，好奇、围观","wx-2021"],["073_叹气.png","[叹气]","","叹气，无奈、感慨","wx-2021"],["074_苦涩.png","[苦涩]","","苦涩，心酸、无奈","wx-2021"],["075_裂开.png","[裂开]","","裂开，心态崩了、震惊","wx-2021"],["076_嘴唇.png","/嘴唇","👄","嘴唇，示爱、飞吻","wx-object"],["077_爱心.png","/爱心","❤","爱心，喜欢、爱","wx-object"],["078_心碎.png","/心碎","💔","心碎，伤心、失恋","wx-object"],["079_拥抱.png","/拥抱","🤗","拥抱，欢迎、抱抱","wx-classic"],["080_强.png","/强","💪","肌肉，强壮、加油","wx-object"],["081_弱.png","/弱","","弱，不行、认输（经典表情）","wx-object"],["082_握手.png","/握手","🤝","握手，合作、达成一致","wx-object"],["083_胜利.png","/胜利","✌","胜利，成功、赢","wx-object"],["084_抱拳.png","/抱拳","🙏","抱拳，感谢、拜托","wx-object"],["085_勾引.png","/勾引","","勾引，撩人、挑逗","wx-object"],["086_拳头.png","/拳头","✊","拳头，加油、打气","wx-object"],["087_OK.png","/OK","👌","OK，好的、没问题","wx-object"],["088_合十.png","/合十","🙏","合十（新版），感谢、祈祷","wx-object"],["089_啤酒.png","/啤酒","🍺","啤酒，干杯、聚会","wx-object"],["090_咖啡.png","/咖啡","☕","咖啡，提神、喝一杯","wx-object"],["091_蛋糕.png","/蛋糕","🍰","蛋糕，生日、庆祝","wx-object"],["092_玫瑰.png","/玫瑰","🌹","玫瑰，爱情、示爱、感谢","wx-object"],["093_凋谢.png","/凋谢","🥀","凋谢，失恋、心灰意冷","wx-object"],["094_菜刀.png","/菜刀","🔪","菜刀，切菜、威胁","wx-object"],["095_炸弹.png","/炸弹","💣","炸弹，炸了、劲爆","wx-object"],["096_便便.png","/便便","💩","便便，恶心、调侃","wx-object"],["097_月亮.png","/月亮","🌙","月亮，夜晚、晚安","wx-object"],["098_太阳.png","/太阳","🌞","太阳，白天、阳光好天气","wx-object"],["099_庆祝.png","/庆祝","🎉","庆祝，祝贺、派对、开派对","wx-object"],["100_礼物.png","/礼物","🎁","礼物，惊喜、赠送","wx-object"],["101_红包.png","/红包","🧧","红包，恭喜发财、收钱","wx-object"],["102_發.png","/發","🀅","麻将「發」牌，招财进宝","wx-object"],["103_福.png","/福","","福，祝福、过年、喜庆","wx-object"],["104_烟花.png","/烟花","🎆","烟花，过年、庆祝","wx-object"],["105_爆竹.png","/爆竹","🧨","爆竹，过年、热闹","wx-object"],["106_猪头.png","/猪头","🐷","猪头，贪吃、调侃对方","wx-classic"],["107_发抖.png","/发抖","🥶","发抖，冷、冻僵","wx-object"],["108_跳跳.png","/跳跳","","跳跳，蹦跳、开心","wx-object"],["109_转圈.png","/转圈","","转圈，庆祝、晕头转向","wx-object"],["110_吐舌.png","/吐舌","😝","吐舌，调皮、得意","wx-2021"],["111_加油加油.png","/加油加油","","加油加油，强力鼓劲","wx-2021"]];
+
+const chatEl = document.getElementById('chat');
+const inputEl = document.getElementById('input');
+const sendBtn = document.getElementById('send');
+const picker = document.getElementById('picker');
+const grid = document.getElementById('grid');
+const tabs = document.querySelectorAll('.tabs button');
+const pImg = document.getElementById('pImg');
+const pName = document.getElementById('pName');
+const pMean = document.getElementById('pMean');
+
+// build lookup: normalized shortcode (with / or [] or bare) -> asset
+const byCode = new Map();
+const byUni = new Map();
+for (const [file, name, uni, meaning, type] of MANIFEST) {
+  const rec = { file, name, uni, meaning, type };
+  if (name) {
+    const bare = name.replace(/[\[\]\/]/g, '');
+    byCode.set(bare, rec);
+    byCode.set('/' + bare, rec);
+    byCode.set('[' + bare + ']', rec);
+  }
+  if (uni) byUni.set(uni, rec);
+}
+
+let me = true; // alternate sender for demo
+function esc(s) { return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function addMsg(text, isMe, isImage) {
+  const wrap = document.createElement('div');
+  wrap.className = 'msg' + (isMe ? ' me' : '');
+  const av = document.createElement('div');
+  av.className = 'avatar';
+  av.textContent = isMe ? '我' : '好';
+  const bub = document.createElement('div');
+  bub.className = 'bubble';
+  bub.innerHTML = isImage ? '<img class="em" src="assets/' + text + '">' : esc(text);
+  wrap.append(av, bub);
+  chatEl.appendChild(wrap);
+  chatEl.scrollTop = chatEl.scrollHeight;
+}
+
+function emTag(rec) {
+  const t = esc((rec.name || '') + ' ' + (rec.meaning || ''));
+  return '<img class="em" src="assets/' + rec.file + '" title="' + t + '">';
+}
+
+function renderRich(text) {
+  // replace /xxx and [xxx] shortcodes, then remaining unicode emoji
+  return esc(text)
+    .replace(/(\/[^\s，。！？,.!?]+|\[[^\]]+\])/g, (m) => {
+      const bare = m.replace(/[\[\]\/]/g, '');
+      const rec = byCode.get(bare);
+      return rec ? emTag(rec) : m;
+    })
+    .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, (ch) => {
+      const rec = byUni.get(ch);
+      return rec ? emTag(rec) : ch;
+    });
+}
+
+function send() {
+  const t = inputEl.value.trim();
+  if (!t) return;
+  const bare = t.replace(/[\[\]\/]/g, '');
+  if (byCode.has(bare)) {
+    addMsg(byCode.get(bare).file, me, true);
+  } else {
+    const wrap = document.createElement('div');
+    wrap.className = 'msg me';
+    const av = document.createElement('div');
+    av.className = 'avatar'; av.textContent = '我';
+    const bub = document.createElement('div');
+    bub.className = 'bubble';
+    bub.innerHTML = renderRich(t);
+    wrap.append(av, bub);
+    chatEl.appendChild(wrap);
+    chatEl.scrollTop = chatEl.scrollHeight;
+  }
+  inputEl.value = '';
+  me = !me;
+}
+
+// picker with meaning preview
+function showPreview(rec) {
+  if (!rec) { pImg.src = ''; pName.textContent = ''; pMean.textContent = ''; return; }
+  pImg.src = 'assets/' + rec.file;
+  pName.textContent = rec.name || '未命名';
+  pMean.textContent = rec.meaning || '';
+}
+
+function renderGrid(tab) {
+  grid.innerHTML = '';
+  showPreview(null);
+  for (const [file, name, uni, meaning, type] of MANIFEST) {
+    const isFace = (type === 'wx-classic' || type === 'wx-2021');
+    if (tab === 'face' && !isFace) continue;
+    if (tab === 'object' && isFace) continue;
+    const img = document.createElement('img');
+    img.src = 'assets/' + file;
+    img.title = ((name || '') + ' ' + (meaning || '')).trim();
+    const rec = { file, name, uni, meaning, type };
+    img.onmouseenter = () => showPreview(rec);
+    img.onclick = () => {
+      const bare = (name || '').replace(/[\[\]\/]/g, '');
+      inputEl.value += (name ? '[' + bare + ']' : '');
+      inputEl.focus();
+    };
+    grid.appendChild(img);
+  }
+}
+grid.onmouseleave = () => showPreview(null);
+
+tabs.forEach(b => b.onclick = () => {
+  tabs.forEach(x => x.classList.remove('on'));
+  b.classList.add('on');
+  renderGrid(b.dataset.tab);
+});
+inputEl.onfocus = () => { picker.classList.add('open'); renderGrid('face'); };
+sendBtn.onclick = send;
+inputEl.onkeydown = e => { if (e.key === 'Enter') send(); };
+
+// seed messages
+addMsg('在吗？', false);
+setTimeout(() => { addMsg('帮我看看这个表情 😂', true); }, 400);
+</script>
+</body>
+</html>
